@@ -74,7 +74,7 @@ export default function App() {
         <div className="flex flex-col items-center mt-72 gap-y-8 ">
           <h1 className="text-4xl font-bold">You have no notes</h1>
           <button
-            className="bg-violet-500 text-white px-4 py-3 text-2xl rounded-lg w-fit"
+            className="bg-darkblue text-white px-4 py-3 text-2xl rounded-lg w-fit"
             onClick={createNewNote}
           >
             Create one now

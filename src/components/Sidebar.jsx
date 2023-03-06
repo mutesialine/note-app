@@ -3,7 +3,7 @@ export default function Sidebar(props) {
   const noteElements = props.notes.map((note, index) => (
     <div key={note.id}>
       <div
-        className={`flex items-center justify-items-between gap-4 space-y-6  hover:text-white hover:bg-[#4A4E74] group   ${
+        className={`flex items-center justify-items-between gap-4 space-y-6  hover:text-white hover:bg-darkblue group   ${
           note.id === props.currentNote.id ? "selected-note" : ""
         }`}
         onClick={() => props.setCurrentNoteId(note.id)}
@@ -28,7 +28,7 @@ export default function Sidebar(props) {
       <div className="flex px-7  items-center gap-6 py-8">
         <p className="text-4xl font-bold">Note</p>
         <button
-          className="text-4xl px-5 rounded-md py-2 text-white bg-[#4A4E74]"
+          className="text-4xl px-5 rounded-md py-2 text-white bg-darkblue"
           onClick={props.newNote}
         >
           +
