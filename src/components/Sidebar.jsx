@@ -34,7 +34,7 @@ export default function Sidebar(props) {
           +
         </button>
       </div>
-      {NoteElements}
+      <NoteElements/>
     </div>
   );
 }
