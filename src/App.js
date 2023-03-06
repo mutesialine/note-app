@@ -1,5 +1,5 @@
-import React from "react";
-import { useState } from "react";
+
+import { useState ,useEffect } from "react";
 import Sidebar from "./components/Sidebar";
 import Editor from "./components/Editor";
 import Split from "react-split";
@@ -9,11 +9,11 @@ export default function App() {
     () => JSON.parse(localStorage.getItem("notes")) || []
   );
 
-  const [currentNoteId, setCurrentNoteId] = React.useState(
+  const [currentNoteId, setCurrentNoteId] =useState(
     (notes[0] && notes[0].id) || ""
   );
 
-  React.useEffect(() => {
+  useEffect(() => {
     localStorage.setItem("notes", JSON.stringify(notes));
   }, [notes]);
 
@@ -60,14 +60,14 @@ export default function App() {
         <Split sizes={[30, 70]} direction="horizontal" className="flex">
           <Sidebar
             notes={notes}
-            currentNote={findCurrentNote()}
+            currentNote={findCurrentNote}
             setCurrentNoteId={setCurrentNoteId}
             newNote={createNewNote}
             deleteNote={deleteNote}
           />
 
           {currentNoteId && notes.length > 0 && (
-            <Editor currentNote={findCurrentNote()} updateNote={updateNote} />
+            <Editor currentNote={findCurrentNote} updateNote={updateNote} />
           )}
         </Split>
       ) : (
